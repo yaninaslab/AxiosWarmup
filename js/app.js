@@ -52,3 +52,36 @@ function quote_failed(error) {
 
 var api_button = document.getElementById("api_button");
 api_button.addEventListener('click', call_apis);
+
+function post_success(response) {
+    var post_section = document.getElementById("post_section");
+    var post_message = document.createElement("h1");
+    post_message.innerText = "Post Success";
+    post_section.appendChild(post_message);
+
+}
+
+function post_failure(error) {
+    var post_section = document.getElementById("post_section");
+    var error_message = document.createElement("h1");
+    error_message.innerText = "Sorry, error"; 
+    post_section.appendChild(error_message);
+
+}
+
+function form_submit() {
+    axios.request({
+        url: "https://jsonplaceholder.typicode.com/posts",
+        method: "POST",
+        data: {
+            title: document.getElementById("post_title").value,
+            body: document.getElementById("post_body").value,
+            userId: 100000
+        }
+    
+    }).then(post_success).catch(post_failure);
+    
+}
+
+var post_submit = document.getElementById("post_submit");
+post_submit.addEventListener('click', form_submit);

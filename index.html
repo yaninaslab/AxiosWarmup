@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
     <section id="container"></section>
     <section id="quote_section"></section>
     <button id="api_button">Click me</button>
-    
+    <section id="post_section"></section>
+
+    <form action="javascript:void(0)">
+        <input type="text" id="post_title">
+        <textarea name="" id="post_body" cols="30" rows="10"></textarea>
+        <input type="submit" id="post_submit" value="Make Post">
+    </form>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
